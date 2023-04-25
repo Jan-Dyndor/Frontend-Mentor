@@ -1,6 +1,6 @@
 # Frontend Mentor - Results summary component solution
 
-./Screenshots of my work/Results summary component deskop version.png
+https://github.com/Jan-Dyndor/Frontend-Mentor/blob/main/results-summary-component-main/Screenshots%20of%20my%20work/Results%20summary%20component%20deskop%20version.png
 
 ## Table of contents
 
