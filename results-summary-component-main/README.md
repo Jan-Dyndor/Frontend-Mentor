@@ -1,6 +1,6 @@
 # Frontend Mentor - Results summary component solution
 
-./Screenshots of my work\Results summary component deskop version.png
+./Screenshots of my work/Results summary component deskop version.png
 
 ## Table of contents
 
