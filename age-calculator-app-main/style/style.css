@@ -1,0 +1,36 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  line-height: 1.5;
+  /* font-size: 3.2rem; */
+  background-color: hsl(0, 0%, 94%);
+}
+
+.container {
+  max-width: 50%;
+  margin: 20rem auto;
+  background-color: hsl(0, 0%, 100%);
+  padding: 2rem;
+}
+
+.head,
+.days,
+.months,
+.years {
+  display: flex;
+}
+
+.days,
+.months,
+.years {
+  flex-direction: column;
+}

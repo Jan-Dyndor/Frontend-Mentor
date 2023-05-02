@@ -32,13 +32,51 @@
     <script src="./JS/js.js"></script>
   </head>
   <body>
-    Day DD Month MM Year YYYY -- years -- months -- days
+    <div class="container">
+      <header class="head">
+        <div class="days">
+          <label for="day">DAY</label>
+          <input type="text" name="day" placeholder="DD" />
+        </div>
+        <div class="months">
+          <label for="month">MONTH</label>
+          <input type="text" name="month" placeholder="MM" />
+        </div>
+        <div class="years">
+          <label for="year">YEAR</label>
+          <input type="text" name="year" placeholder="YYYY" />
+        </div>
+      </header>
+      <section class="section">
+        <hr class="line" />
+        <img
+          src="./assets/images/icon-arrow.svg"
+          class="icon"
+          alt="Arrow icon"
+        />
+      </section>
+      <article class="article">
+        <div class="yearsDIV">
+          <p class="yearsResoult">- -</p>
+          <p class="text">years</p>
+        </div>
+        <div class="monthDIV">
+          <p class="yearsResoult">- -</p>
+          <p class="text">months</p>
+        </div>
+        <div class="daysDIV">
+          <p class="yearsResoult">- -</p>
+          <p class="text">days</p>
+        </div>
+      </article>
+    </div>
 
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by
+      <a href="https://github.com/Jan-Dyndor" target="_blank">Jan Dyndor</a>.
     </div>
   </body>
 </html>
