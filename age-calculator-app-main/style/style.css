@@ -1,3 +1,8 @@
+/* -FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 
+
+-SPACING SYSTEM (px) 
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 */
 html {
   font-size: 62.5%;
 }
@@ -13,13 +18,37 @@ body {
   line-height: 1.5;
   /* font-size: 3.2rem; */
   background-color: hsl(0, 0%, 94%);
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
-  max-width: 50%;
-  margin: 20rem auto;
+  max-width: 45%;
+  margin: 5rem auto;
   background-color: hsl(0, 0%, 100%);
-  padding: 2rem;
+  padding: 3.2rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 140px;
+}
+
+/* input styles */
+label {
+  color: hsl(0, 1%, 44%);
+  letter-spacing: 0.2rem;
+}
+
+input {
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid hsl(0, 0%, 86%);
+  max-width: 90%;
+  font-weight: 700;
+}
+.head {
+  gap: 2rem;
+  max-width: 75%;
 }
 
 .head,
@@ -33,4 +62,62 @@ body {
 .months,
 .years {
   flex-direction: column;
+  max-width: 29%;
+  gap: 0.5rem;
 }
+
+.section {
+  display: flex;
+  align-items: center;
+}
+.iconDIV {
+  height: 100%;
+  padding: 2rem;
+  background-color: hsl(259, 100%, 65%);
+  border-radius: 50%;
+}
+
+.icon {
+  width: 2.4rem;
+  border-radius: 50%;
+  scale: 1.5;
+}
+
+.line {
+  width: 100%;
+  margin: 0;
+  color: hsl(0, 0%, 86%);
+}
+
+/* Display styles */
+.article {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  font-style: italic;
+}
+.yearsDIV,
+.monthDIV,
+.daysDIV {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2rem;
+}
+
+.yearsResoult,
+.monthsResoult,
+.daysResoult,
+.text {
+  font-size: 7.4rem;
+  font-weight: 800;
+}
+
+.yearsResoult,
+.monthsResoult,
+.daysResoult {
+  color: hsl(259, 100%, 65%);
+}
+
+/* ! PROBLEM nie za bardzo weim jak teraz ustawić te strzałkę blizej lewej strony i skrócić te kresekę jak wszedzie dałem wartości procentowe */
+/* mOŻESZ SIĘ POBAWIĆ PROCENTAMI i je pzomieniać, dodatkowo może rósz width of section  */
