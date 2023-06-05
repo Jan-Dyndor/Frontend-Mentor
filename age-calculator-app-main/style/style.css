@@ -121,3 +121,26 @@ input {
 
 /* ! PROBLEM nie za bardzo weim jak teraz ustawić te strzałkę blizej lewej strony i skrócić te kresekę jak wszedzie dałem wartości procentowe */
 /* mOŻESZ SIĘ POBAWIĆ PROCENTAMI i je pzomieniać, dodatkowo może rósz width of section  */
+/* Media */
+/* 1080 / 16 = 67,5rem */
+@media (max-width: 67.5rem) {
+  .iconDIV {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    height: 6.7rem;
+    width: 6.7rem;
+  }
+  .section {
+    position: relative;
+    margin: 5rem 0 4rem 0;
+  }
+  .yearsResoult,
+  .monthsResoult,
+  .daysResoult {
+    font-size: 7rem;
+  }
+  .text {
+    font-size: 6rem;
+  }
+}
