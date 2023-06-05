@@ -118,6 +118,10 @@ input {
 .daysResoult {
   color: hsl(259, 100%, 65%);
 }
+.messageNN,
+.messageINVALID {
+  display: none;
+}
 
 /* ! PROBLEM nie za bardzo weim jak teraz ustawić te strzałkę blizej lewej strony i skrócić te kresekę jak wszedzie dałem wartości procentowe */
 /* mOŻESZ SIĘ POBAWIĆ PROCENTAMI i je pzomieniać, dodatkowo może rósz width of section  */
