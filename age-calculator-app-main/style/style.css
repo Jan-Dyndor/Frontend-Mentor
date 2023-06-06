@@ -75,6 +75,7 @@ input {
   padding: 2rem;
   background-color: hsl(259, 100%, 65%);
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .icon {
@@ -118,7 +119,9 @@ input {
 .daysResoult {
   color: hsl(259, 100%, 65%);
 }
-.messageNN,
+.messageNND,
+.messageNNM,
+.messageNNY,
 .messageINVALID {
   display: none;
 }
