@@ -122,7 +122,9 @@ input {
 .messageNND,
 .messageNNM,
 .messageNNY,
-.messageINVALID {
+.messageINVALIDD,
+.messageINVALIDY,
+.messageINVALIDM {
   display: none;
 }
 
