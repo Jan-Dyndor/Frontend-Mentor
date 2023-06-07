@@ -16,35 +16,51 @@ let dayR = document.querySelector(".daysResoult");
 // test
 const test = document.querySelector(".text");
 
+// refactoring -- functions
+function colorLabelDisplayDayNoNumber(color, display) {
+  noNumberDay.style.color = color;
+  noNumberDay.style.display = display;
+  label[0].style.color = color;
+}
+function colorLabelDayInvalidNumber(color, display) {
+  invalidDay.style.color = color;
+  invalidDay.style.display = display;
+  label[0].style.color = color;
+}
+function colorLabelMonthNoNumber(color, display) {
+  noNumberMonth.style.display = display;
+  noNumberMonth.style.color = color;
+  label[1].style.color = color;
+}
+function colorLabelMonthInvalidNumber(color, display) {
+  invalidMonth.style.display = display;
+  invalidMonth.style.color = color;
+  label[1].style.color = color;
+}
+function colorLabelYearNoNumber(color, display) {
+  noNumberYear.style.display = display;
+  noNumberYear.style.color = color;
+  label[2].style.color = color;
+}
+function colorLabelYearInvalidNumber(color, display) {
+  invalidYear.style.display = display;
+  invalidYear.style.color = color;
+  label[2].style.color = color;
+}
+// reset function
+function reset(color, display) {
+  colorLabelDisplayDayNoNumber(color, display);
+  colorLabelDayInvalidNumber(color, display);
+  colorLabelMonthNoNumber(color, display);
+  colorLabelMonthInvalidNumber(color, display);
+  colorLabelYearNoNumber(color, display);
+  colorLabelYearInvalidNumber(color, display);
+}
+
 document.querySelector(".iconDIV").addEventListener("click", function () {
-  // ! reset - will do a refactoring later
-  // day
-  noNumberDay.style.display = "none";
-  noNumberDay.style.color = "hsl(0, 1%, 44%)";
-  label[0].style.color = "hsl(0, 1%, 44%)";
-
-  invalidDay.style.display = "none";
-  invalidDay.style.color = "hsl(0, 1%, 44%)";
-  label[0].style.color = "hsl(0, 1%, 44%)";
-
-  // month
-  noNumberMonth.style.display = "none";
-  noNumberMonth.style.color = "hsl(0, 1%, 44%)";
-  label[1].style.color = "hsl(0, 1%, 44%)";
-
-  invalidMonth.style.display = "none";
-  invalidMonth.style.color = "hsl(0, 1%, 44%)";
-  label[1].style.color = "hsl(0, 1%, 44%)";
-
-  // year
-  noNumberYear.style.display = "none";
-  noNumberYear.style.color = "hsl(0, 1%, 44%)";
-  label[2].style.color = "hsl(0, 1%, 44%)";
-  invalidYear.style.display = "none";
-  invalidYear.style.color = "hsl(0, 1%, 44%)";
-  label[2].style.color = "hsl(0, 1%, 44%)";
-
-  // function that check what is number
+  // reset warnings
+  reset("hsl(0, 1%, 44%)", "none");
+  // function that check what is number of days in month
   const getDays = (year, month) => {
     return new Date(year, month, 0).getDate();
   };
@@ -55,50 +71,34 @@ document.querySelector(".iconDIV").addEventListener("click", function () {
   const day = Number(document.querySelector(".dayInput").value);
   const month = Number(document.querySelector(".monthInput").value);
   const year = Number(document.querySelector(".yearInput").value);
-
+  //bool vlaue to control if any input is wrongly done
   let ok = true;
   // Cheching if inputs fields are empty and numbers are valid
   if (!day || isNaN(day)) {
-    noNumberDay.style.display = "block";
-    noNumberDay.style.color = "red";
-    label[0].style.color = "red";
+    colorLabelDisplayDayNoNumber("red", "block");
     ok = false;
   } else if (day > getDays(year, month) || day < 1) {
-    invalidDay.style.display = "block";
-    invalidDay.style.color = "red";
-    label[0].style.color = "red";
+    colorDayInvalidNumber("red", "block");
     ok = false;
   }
   if (!month || isNaN(month)) {
-    noNumberMonth.style.display = "block";
-    noNumberMonth.style.color = "red";
-    label[1].style.color = "red";
+    colorLabelMonthNoNumber("red", "block");
     ok = false;
   } else if (month < 1 || month > 31) {
-    invalidMonth.style.display = "block";
-    invalidMonth.style.color = "red";
-    label[1].style.color = "red";
+    colorLabelMonthInvalidNumber("red", "block");
     ok = false;
   }
   if (!year || isNaN(year)) {
-    noNumberYear.style.display = "block";
-    noNumberYear.style.color = "red";
-    label[2].style.color = "red";
+    colorLabelYearNoNumber("red", "block");
     ok = false;
   } else if (year > current.getFullYear()) {
-    invalidYear.style.display = "block";
-    invalidYear.style.color = "red";
-    label[2].style.color = "red";
+    colorLabelYearInvalidNumber("red", "block");
     ok = false;
   }
 
   if (ok) {
     //Making calculations
-    console.log(day);
-
-    console.log(
-      `liczba miesicy w miesiacu numer ${month} to ${getDays(year, month)}`
-    );
+    //! Unfortuanately it it not work so well
 
     let birthDate = new Date(year, month - 1, day);
 
@@ -115,12 +115,12 @@ document.querySelector(".iconDIV").addEventListener("click", function () {
       resoult.getFullYear();
     //Convert to an array and store
     const calcFormat = calcFormatTmp.split("-");
-    //Subtract each member of our array from the default date
+    //Subtract each member of array
     const days_passed = Number(Math.abs(calcFormat[0]) - 1);
     const months_passed = Number(Math.abs(calcFormat[1]) - 1);
     const years_passed = Number(Math.abs(calcFormat[2]) - 1970);
 
-    // changing values to resoults
+    // displaying values
     dayR.textContent = days_passed;
     monthR.textContent = months_passed;
     yearR.textContent = years_passed;
