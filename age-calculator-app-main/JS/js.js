@@ -17,6 +17,33 @@ let dayR = document.querySelector(".daysResoult");
 const test = document.querySelector(".text");
 
 document.querySelector(".iconDIV").addEventListener("click", function () {
+  // ! reset - will do a refactoring later
+  // day
+  noNumberDay.style.display = "none";
+  noNumberDay.style.color = "hsl(0, 1%, 44%)";
+  label[0].style.color = "hsl(0, 1%, 44%)";
+
+  invalidDay.style.display = "none";
+  invalidDay.style.color = "hsl(0, 1%, 44%)";
+  label[0].style.color = "hsl(0, 1%, 44%)";
+
+  // month
+  noNumberMonth.style.display = "none";
+  noNumberMonth.style.color = "hsl(0, 1%, 44%)";
+  label[1].style.color = "hsl(0, 1%, 44%)";
+
+  invalidMonth.style.display = "none";
+  invalidMonth.style.color = "hsl(0, 1%, 44%)";
+  label[1].style.color = "hsl(0, 1%, 44%)";
+
+  // year
+  noNumberYear.style.display = "none";
+  noNumberYear.style.color = "hsl(0, 1%, 44%)";
+  label[2].style.color = "hsl(0, 1%, 44%)";
+  invalidYear.style.display = "none";
+  invalidYear.style.color = "hsl(0, 1%, 44%)";
+  label[2].style.color = "hsl(0, 1%, 44%)";
+
   // function that check what is number
   const getDays = (year, month) => {
     return new Date(year, month, 0).getDate();
@@ -29,10 +56,6 @@ document.querySelector(".iconDIV").addEventListener("click", function () {
   const month = Number(document.querySelector(".monthInput").value);
   const year = Number(document.querySelector(".yearInput").value);
 
-  // ! Trzeeba będzie jeszcze zrobić rzeby za każdym razem po kliknięciu odświerzało się i nie było jużtych anpisów na czerwoo i wgl, narazie na około to zrobimy a potem refactoringiem w funkcjach zamkniemy
-  //
-  //
-  // !moze zamknę w całe sprawdzanie poprawności w blok if i jak wejdziemy  w niego czy cos to na koncu return zeby nie przeszło do liczenia wieku bo inaczej sie rozwali imo
   let ok = true;
   // Cheching if inputs fields are empty and numbers are valid
   if (!day || isNaN(day)) {
@@ -68,7 +91,7 @@ document.querySelector(".iconDIV").addEventListener("click", function () {
     label[2].style.color = "red";
     ok = false;
   }
-  console.log(ok);
+
   if (ok) {
     //Making calculations
     console.log(day);
