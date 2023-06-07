@@ -67,12 +67,28 @@ document.querySelector(".iconDIV").addEventListener("click", function () {
   console.log(
     `liczba miesicy w miesiacu numer ${month} to ${getDays(year, month)}`
   );
-  let X = new Date(year, month, day);
 
-  const wynik = current - X;
-  // yearR = current.getFullYear() - X.getFullYear();
-  // monthR = current.getMonth() - X.getMonth();
-  // dayR = current.getDay() - X.getDay();
+  let birthDate = new Date(year, month - 1, day);
 
-  console.log(`Wynik: years ${yearR}, miesiace ${monthR} i dni: ${dayR}`);
+  const currentMili = current.getTime();
+  const birthDateMili = birthDate.getTime();
+  let resoult = new Date(currentMili - birthDateMili);
+  //!Got hepl on that one with https://blog.bitsrc.io/calculate-the-difference-between-two-2-dates-e1d76737c05a
+  r;
+  const calcFormatTmp =
+    resoult.getDate() +
+    "-" +
+    (resoult.getMonth() + 1) +
+    "-" +
+    resoult.getFullYear();
+  //Convert to an array and store
+  const calcFormat = calcFormatTmp.split("-");
+  //Subtract each member of our array from the default date
+  const days_passed = Number(Math.abs(calcFormat[0]) - 1);
+  const months_passed = Number(Math.abs(calcFormat[1]) - 1);
+  const years_passed = Number(Math.abs(calcFormat[2]) - 1970);
+
+  console.log(
+    `Wynik: years ${years_passed}, miesiace ${months_passed} i dni: ${days_passed}`
+  );
 });
