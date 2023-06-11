@@ -98,7 +98,7 @@ document.querySelector(".iconDIV").addEventListener("click", function () {
 
   if (ok) {
     //Making calculations
-    //! Unfortuanately it it not work so well
+    //! Unfortunately it not work so well
 
     let birthDate = new Date(year, month - 1, day);
 
